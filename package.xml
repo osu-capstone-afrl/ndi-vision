@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="2">
+    <name>ndi_vision</name>
+    <version>0.0.1</version>
+    <description>
+        <p>PROJECT: Vision Tools for Autonomous NonDestructive Inspection</p>
+    </description>
+    <author>Nicholas Pater</author>
+    <maintainer email="buynak.9@buckeyemail.osu.edu">Adam Buynak (AIMS Lab @ The Ohio State University)</maintainer>
+    <license>Apache 2.0</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <test_depend>roslaunch</test_depend>
+
+    <exec_depend>rospy</exec_depend>
+    <exec_depend>rqt</exec_depend>
+    <exec_depend>rviz</exec_depend>
+
+    <export>
+        <architecture_independent/>
+    </export>
+</package>
