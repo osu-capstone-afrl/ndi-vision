@@ -15,7 +15,7 @@
     </include>
 
     <!-- Load Intel Realsense "Camera_Info" topic into ROS Parameter Server -->
-    <!--tictactoe version- node name="vision_server" ns="ttt" pkg="tic_tac_toe" type="camera_info_server.py" args="$(arg iRS_info_topic)" respawn="false" / -->
-    <node name="vision_server" ns="ttt" pkg="package_name" type="type_name" args="$(arg iRS_infotopic)" respawn="false" />
+    <!--tictactoe version,delete me- node name="vision_server" ns="ttt" pkg="tic_tac_toe" type="camera_info_server.py" args="$(arg iRS_info_topic)" respawn="false" / -->
+    <node name="vision_server" pkg="ndi_vision" type="sub.cpp" args="$(arg iRS_infotopic)" respawn="false" />
 
 </launch>
