@@ -7,7 +7,7 @@
         <p>PROJECT: Vision Tools for Autonomous NonDestructive Inspection</p>
     </description>
     <author>Nicholas Pater</author>
-    <maintainer email="buynak.9@buckeyemail.osu.edu">Adam Buynak (AIMS Lab @ The Ohio State University)</maintainer>
+    <maintainer email="pater.8@buckeyemail.osu.edu">Adam Buynak (AIMS Lab @ The Ohio State University)</maintainer>
     <license>Apache 2.0</license>
 
     <buildtool_depend>catkin</buildtool_depend>
