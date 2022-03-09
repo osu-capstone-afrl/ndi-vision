@@ -13,7 +13,7 @@ include_directories(${catkin_INCLUDE_DIRS})
 
 catkin_package()
 
-add_executable(sub src/sub.cpp)
+add_executable(sub_pcl src/sub_pcl.cpp)
 target_link_libraries(sub ${catkin_LIBRARIES})
 # add_dependencies(sub)
 # add_executable(talker src/talker.cpp)

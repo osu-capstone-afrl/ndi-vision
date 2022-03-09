@@ -1,6 +1,6 @@
 
 # Non-Destructive Inspection - Vision Project
-Package intended to retrieve and reconstitute multiple point clouds from the RealSense Depth Camera D435i using ROS, C++, and Python. This work completed for the Air Force Research Labs through the Multidisciplinary Capstone within The Ohio State University.
+Package intended to retrieve and reconstitute multiple point clouds from the RealSense Depth Camera D435i using ROS, C++, and Python. This work completed for the Air Force Research Lab through the Multidisciplinary Capstone within The Ohio State University.
 
 _Note: This repository was designed for ROS Melodic. It has not been tested on other distributions._
 
