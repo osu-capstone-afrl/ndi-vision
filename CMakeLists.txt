@@ -5,23 +5,21 @@ find_package(catkin REQUIRED
   COMPONENTS
     roscpp
     rospy
-#     std_msgs
-#     genmsg
 )
+find_package(PCL 1.2 REQUIRED)
 
 include_directories(${catkin_INCLUDE_DIRS})
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
 
 catkin_package()
 
-add_executable(sub_pcl src/sub_pcl.cpp)
-target_link_libraries(sub ${catkin_LIBRARIES})
-# add_dependencies(sub)
-# add_executable(talker src/talker.cpp)
-# target_link_libraries(talker ${catkin_LIBRARIES})
-# add_dependencies(talker beginner_tutorials_generate_messages_cpp)
-# add_executable(listener src/listener.cpp)
-# target_link_libraries(listener ${catkin_LIBRARIES})
-# add_dependencies(listener beginner_tutorials_generate_messages_cpp)
+# add_executable(subpcl src/subpcl.cpp)
+# target_link_libraries(subpcl ${catkin_LIBRARIES})
+add_executable(initsub src/initsub.cpp)
+target_link_libraries(initsub ${catkin_LIBRARIES})
+target_link_libraries(initsub ${PCL_LIBRARIES})
 
 install(
     DIRECTORY scripts_process scripts_combine launch
