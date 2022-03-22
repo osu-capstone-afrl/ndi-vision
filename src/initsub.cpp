@@ -5,14 +5,14 @@
 #include <pcl/point_types.h>
 #include <ros/console.h>
 
-//ros::Publisher pub;
+ros::Publisher pub;
 
-void cloud_cb(const sensor_msgs::PointCloud2ConstPtr& input)
+void cloud_cb (const sensor_msgs::PointCloud2ConstPtr& input)
 {
   // Create a container for the data.
   sensor_msgs::PointCloud2 output;
 
-  ROS_DEBUG("Hello World");
+  //ROS_DEBUG("Hello World");
 
   // Do data processing here...
   //output = input;
@@ -31,7 +31,7 @@ int main (int argc, char** argv)
   ros::Subscriber sub = nh.subscribe ("camera/depth/color/points", 1, cloud_cb);
 
   // Create a ROS publisher for the output point cloud
-  //pub = nh.advertise<sensor_msgs::PointCloud2> ("output", 1);
+  pub = nh.advertise<sensor_msgs::PointCloud2> ("output", 1);
 
   // Spin
   ros::spin ();

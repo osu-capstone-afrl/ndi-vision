@@ -15,13 +15,11 @@ add_definitions(${PCL_DEFINITIONS})
 
 catkin_package()
 
-# add_executable(subpcl src/subpcl.cpp)
-# target_link_libraries(subpcl ${catkin_LIBRARIES})
 add_executable(initsub src/initsub.cpp)
 target_link_libraries(initsub ${catkin_LIBRARIES})
 target_link_libraries(initsub ${PCL_LIBRARIES})
 
 install(
-    DIRECTORY scripts_process scripts_combine launch
+    DIRECTORY scripts_process scripts_combine launch src
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )

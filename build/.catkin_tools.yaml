@@ -1,6 +1,0 @@
-devel_space: /home/pater.8/ws_vis/src/ndi-vision/devel
-install: false
-install_space: /home/pater.8/ws_vis/src/ndi-vision/install
-profile: default
-source_space: /home/pater.8/ws_vis/src/ndi-vision/src
-workspace: /home/pater.8/ws_vis/src/ndi-vision
