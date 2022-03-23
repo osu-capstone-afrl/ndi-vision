@@ -19,7 +19,7 @@
 	<arg name="color_height"      value="480"/>
 	<arg name="color_fps"         value="30"/>
 
-        <arg name="enable_pointcloud" value="true"/>
+    <arg name="enable_pointcloud" value="true"/>
 	<arg name="enable_sync"       value="true"/>
         <!-- <arg name="mode" value="manual"/> -->
     </include>
@@ -27,6 +27,8 @@
     <!-- Load Intel Realsense "Camera_Info" topic into ROS Parameter Server -->
     <!--tictactoe version,delete me- node name="vision_server" ns="ttt" pkg="tic_tac_toe" type="camera_info_server.py" args="$(arg iRS_info_topic)" respawn="false" / -->
     <!-- <node name="vision_server" pkg="ndi_vision" type="subpcl.cpp" args="$(arg iRS_infotopic)" respawn="false" /> -->
-    <node name="vision_server" pkg="ndi_vision" type="initsub.cpp" args="/camera/aligned_depth_to_color/camera_info" respawn="false" />
+
+    <!-- <node name="vision_server" pkg="ndi_vision" type="initsub.cpp" args="/camera/aligned_depth_to_color/camera_info" respawn="false" /> -->
+    <node name="vision_server" pkg="ndi_vision" type="helloworld.cpp" args="/camera/aligned_depth_to_color/camera_info" respawn="false" />
 
 </launch>
