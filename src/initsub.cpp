@@ -4,6 +4,8 @@
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 #include <ros/console.h>
+#include <fstream>
+using namespace std;
 
 ros::Publisher pub;
 
@@ -12,7 +14,12 @@ void cloud_cb (const sensor_msgs::PointCloud2ConstPtr& input)
   // Create a container for the data.
   sensor_msgs::PointCloud2 output;
 
-  //ROS_DEBUG("Hello World");
+  ROS_INFO_STREAM("test52.pcd created");
+
+  ofstream myfile;
+  myfile.open("test52.pcd", ios::out | ios::binary);
+  myfile << *input;
+  myfile.close();
 
   // Do data processing here...
   //output = input;
