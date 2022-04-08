@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- Tier1 Launch File: Init -->
+<!-- Tier1 Launch File: init_main -->
 
 <launch>
 
@@ -24,6 +24,7 @@
         <arg name="enable_sync"       value="true"/>
         <arg name="ordered_pc"        value="true"/>
         <arg name="allow_no_texture_points" value="true"/>
+        <arg name="filters" value="spatial,temporal,hole_filling"/>
         <!-- <arg name="mode" value="manual"/> -->
     </include>
 
