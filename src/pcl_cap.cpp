@@ -1,9 +1,9 @@
 
+// pcl_cap.cpp
+
 #include <ros/ros.h>
 #include <ros/console.h>
-
 #include <sensor_msgs/PointCloud2.h>
-
 #include <pcl_conversions/pcl_conversions.h>
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
@@ -40,16 +40,11 @@ ros::Publisher pub_;
 
 void cb (const sensor_msgs::PointCloud2ConstPtr& input)
 {
-	// Create a container for the data.
-	// sensor_msgs::PointCloud2 myPCL_msg;
 
+	// Publish data
 	pub_.publish(input);
 
-	// Do data processing here
-	//output = input;
-
-	// Publish the data
-	//pub_.publish (input);
+	// If desired, could call another script from this callback to automate process
 }
 
 int main(int argc, char** argv)
@@ -60,17 +55,18 @@ int main(int argc, char** argv)
 	ROS_INFO_STREAM("pcl_cap successfully initialized");
 
 	// Create a ROS subscriber for the input pcl
-	ros::Subscriber sub_ = nh_.subscribe ("camera/depth/color/points", 10, cb);
-	ROS_INFO_STREAM("Subscribed to camera/depth/color/points");
+	ros::Subscriber sub_ = nh_.subscribe ("camera/depth/color/points", 25, cb);
+	ROS_INFO_STREAM("Succesfully subscribed to camera/depth/color/points");
 
 	// Create a ROS publisher for the output pcl
-	pub_ = nh_.advertise<sensor_msgs::PointCloud2> ("myPCL_node", 1);
-	ROS_INFO_STREAM("ROS message from camera/depth/color/points successfully sent to myPCL_node")
+	pub_ = nh_.advertise<sensor_msgs::PointCloud2> ("myPCL_captured", 1);
+	ROS_INFO_STREAM("ROS message from camera/depth/color/points successfully sent to myPCL_captured");
 
 	// Spin once
 	ros::spinOnce();
 
 	ROS_INFO_STREAM("Run pcl_cap again after rearranging camera for another snapshot");
+	ROS_INFO_STREAM("Consider running pcl_statfilter.cpp in another terminal tab to statistically filter the point clouds from myPCL_captured");
 
 	return 0;
 }

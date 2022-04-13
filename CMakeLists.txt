@@ -10,7 +10,7 @@ find_package(catkin REQUIRED
 find_package(PCL 1.2 REQUIRED)
 
 catkin_package(
-  LIBRARIES initsub.cpp helloworld.cpp pcl_cap.cpp
+  LIBRARIES pcd_print.cpp pcl_cap.cpp pcl_statfilter.cpp
   CATKIN_DEPENDS pcl_conversions pcl_ros roscpp
 )
 
@@ -24,17 +24,14 @@ install(
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-add_executable(helloworld src/helloworld.cpp)
-target_link_libraries(helloworld ${catkin_LIBRARIES})
-
-add_executable(initsub src/initsub.cpp)
-target_link_libraries(initsub ${catkin_LIBRARIES})
-target_link_libraries(initsub ${PCL_LIBRARIES})
+add_executable(pcd_print src/pcd_print.cpp)
+target_link_libraries(pcd_print ${catkin_LIBRARIES})
+target_link_libraries(pcd_print ${PCL_LIBRARIES})
 
 add_executable(pcl_cap src/pcl_cap.cpp)
 target_link_libraries(pcl_cap ${catkin_LIBRARIES})
 target_link_libraries(pcl_cap ${PCL_LIBRARIES})
 
-# add_executable(pointcloud_to_pcd src/pointcloud_to_pcd.cpp)
-# target_link_libraries(pointcloud_to_pcd ${catkin_LIBRARIES})
-# target_link_libraries(pointcloud_to_pcd ${PCL_LIBRARIES})
+add_executable(pcl_statfilter src/pcl_statfilter.cpp)
+target_link_libraries(pcl_statfilter ${catkin_LIBRARIES})
+target_link_libraries(pcl_statfilter ${PCL_LIBRARIES})
